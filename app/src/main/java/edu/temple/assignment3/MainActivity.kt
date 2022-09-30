@@ -27,10 +27,7 @@ class MainActivity : AppCompatActivity() {
                 layout.setBackgroundColor(Color.parseColor(parent!!.getItemAtPosition(position).toString()))
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                layout.setBackgroundColor(Color.WHITE)
-            }
-
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
     }
 }
