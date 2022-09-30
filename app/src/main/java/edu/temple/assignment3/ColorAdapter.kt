@@ -21,7 +21,13 @@ class ColorAdapter(_context: Context) : BaseAdapter() {
         "Magenta",
         "Teal",
         "Olive",
-        "Black"
+        "Black",
+        "Navy",
+        "Maroon",
+        "Fuchsia",
+        "Lime",
+        "Silver",
+        "Cyan"
     )
 
     override fun getCount(): Int {
@@ -62,7 +68,12 @@ class ColorAdapter(_context: Context) : BaseAdapter() {
         textView.text = colors[position]
         textView.setBackgroundColor(color)
 
-        if(colors[position] == "Black" || colors[position] == "Blue")
+        if(
+            colors[position] == "Black" ||
+            colors[position] == "Blue" ||
+            colors[position] == "Navy" ||
+            colors[position] == "Fuchsia"
+        )
             textView.setTextColor(Color.WHITE)
 
         return textView
