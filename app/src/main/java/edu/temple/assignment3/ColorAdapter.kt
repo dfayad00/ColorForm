@@ -1,11 +1,11 @@
 package edu.temple.assignment3
 
 import android.content.Context
+import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import org.w3c.dom.Text
 
 class ColorAdapter(_context: Context) : BaseAdapter() {
     private val context = _context
@@ -20,7 +20,7 @@ class ColorAdapter(_context: Context) : BaseAdapter() {
         "White",
         "Magenta",
         "Teal",
-        "Orange",
+        "Olive",
         "Black"
     )
 
@@ -39,6 +39,26 @@ class ColorAdapter(_context: Context) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val textView = TextView(context)
         textView.text = colors[position]
+        textView.setBackgroundColor(Color.WHITE)
+
+        return textView
+    }
+
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val textView: TextView
+        val color = Color.parseColor(colors[position])
+
+        if(convertView != null)
+            textView = convertView as TextView
+        else
+            textView = TextView(context)
+
+        textView.text = colors[position]
+        textView.setBackgroundColor(color)
+
+        if(colors[position] == "Black" || colors[position] == "Blue")
+            textView.setTextColor(Color.WHITE)
+
         return textView
     }
 }
