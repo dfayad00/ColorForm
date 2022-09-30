@@ -7,7 +7,7 @@ import android.widget.Spinner
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var colorSpinner: Spinner
+    private lateinit var colorSpinner: Spinner
     lateinit var layout: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         // Bind views
         colorSpinner = findViewById(R.id.colorSpinner)
         layout = findViewById(R.id.layout)
-        
+
+        colorSpinner.adapter = ColorAdapter(this)
     }
 }
